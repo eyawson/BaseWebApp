@@ -9,11 +9,15 @@ app.use(express.static(__dirname));
 app.set('views', __dirname + '/html');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
+app.get('/index', function (request, response) {
   response.render('pages/index');
 });
 
-app.listen(app.get('port'), function() {
+app.get('/weather', function (request, response) {
+  response.render('pages/weather');
+});
+
+app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
 
