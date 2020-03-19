@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <% include ../helpers/head %>
+    <%- include('../helpers/head'); %>
 </head>
 
 <body>
@@ -10,9 +10,10 @@
     <!-- Check out more components here: http://getbootstrap.com/components/ -->
     <div class="page-header">
         <h1>This is the weather of Newark, NJ</h1>
-        <% include ../helpers/nav %>
+        <%- include('../helpers/nav'); %>
     </div>
-
+    <div class="city"></div>
+    <div class="temp"></div>
 
 
 </body>

@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
 app.set('views', __dirname + '/html');
 app.set('view engine', 'ejs');
 
-app.get('/index', function (request, response) {
+app.get('/', function (request, response) {
   response.render('pages/index');
 });
 
