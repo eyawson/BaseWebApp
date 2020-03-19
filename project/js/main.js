@@ -5,20 +5,24 @@ function myFunction() {
   $("#demo").html("NEWWW PARAGRAPH #javascript #fire");
 
   // 'img-circle' is a bootstrap thing! Check out more here: http://getbootstrap.com/css/
-  $("#doge-image").append(`<img class="img-circle" src="images/wowdoge.jpeg" />`);
+  $("#doge-image").append(
+    `<img class="img-circle" src="images/wowdoge.jpeg" />`
+  );
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
   getWeather();
-})
+});
 
 function getWeather() {
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=Newark&appid=" + apiKey;
+  let url =
+    "https://api.openweathermap.org/data/2.5/weather?q=Newark&units=imperial&appid=" +
+    apiKey;
   $.ajax(url, {
-    success: function (data) {
+    success: function(data) {
       console.log(data);
       $(".city").text(data.name);
       $(".temp").text(data.main.temp);
     }
-  })
+  });
 }
