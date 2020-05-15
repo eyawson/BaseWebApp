@@ -14,7 +14,15 @@
     <%- include('../helpers/nav'); %>
   </div>
 
-
+  <form onsubmit="handleMessageFormSubmit()" action="#">
+    Title: <br>
+    <input id="post-title" placeholder="My title">
+    <br>
+    Message
+    <textarea id="post-body" placeholder="Type your message here..."></textarea>
+    <br>
+    <button>Submit</button>
+  </form>
   <p id="demo">
     This is me testing out a lil html file
   </p>
