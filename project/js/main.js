@@ -1,3 +1,7 @@
+$(document).ready(function () {
+  getPosts();
+});
+
 function myFunction() {
   // use jQuery ($ is shorthand) to find the div on the page and then change the html
   // jQuery can do a lot of crazy stuff so make sure to google around to find out more
@@ -86,4 +90,20 @@ function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
   addMessage(postTitle, postBody);
+}
+
+function getPosts() {
+  return firebase
+    .database()
+    .ref("posts")
+    .once("value")
+    .then(function (snapshot) {
+      var posts = snapshot.val();
+      for (var postKey in posts) {
+        var post = posts[postKey];
+        $("#post-listing").append(
+          "<div>" + post.title + " - " + post.body + "</div>"
+        );
+      }
+    });
 }
